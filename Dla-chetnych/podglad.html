@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylowy Artykuł</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        #stylizedContent {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        p {
+            text-indent: 40px;
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div id="stylizedContent">
+        <h1>Twój Artykuł</h1>
+        <div id="content"></div>
+    </div>
+
+    <script>
+        async function loadContent() {
+            try {
+                const response = await fetch('szablon.html');
+                const text = await response.text();
+
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                const articleContent = doc.querySelector('#content').innerHTML;
+
+                document.getElementById('content').innerHTML = articleContent;
+            } catch (error) {
+                console.error("err", error);
+                document.getElementById('content').innerText = "err";
+            }
+        }
+
+        loadContent();
+    </script>
+</body>
+</html>

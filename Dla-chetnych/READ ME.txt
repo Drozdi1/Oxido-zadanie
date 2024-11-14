@@ -1,0 +1,19 @@
+Wyjaśnienie:
+
+Plik szablon.html jest prostym szablonem, do którego należy wkleić treść artykułu.
+Plik podglad.html pobiera treść z szablon.html i wyświetla ją z przyjemnym stylem. Wykorzystuje JavaScript i fetch, aby załadować zawartość.
+
+Uruchomienie:
+Przeglądarka wymaga uruchomienia lokalnego serwera, aby odczytać lokalne pliki przez fetch.
+Dlatego należy w nowym terminalu konsoli wpisać:
+
+- npm install -g http-server
+
+i uruchomić ten serwer:
+
+- http-server .
+
+I aby uruchomić pliki należy w przeglądarce wkleić wyświetlony adres i ścieżkę pliku np.
+
+- http://localhost:8080/szablon.html
+- http://localhost:8080/podglad.html
