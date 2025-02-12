@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const OPENAI_API_KEY = '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';
+const OPENAI_API_KEY = '';
 
 function readArticleFile() {
     const filePath = './tresc-artykulu.txt';
